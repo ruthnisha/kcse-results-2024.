@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 20px;
+            border-bottom: 2px solid #dcdcdc;
+        }
+
+        header img {
+            height: 50px;
+            vertical-align: middle;
+        }
+
+        header h1 {
+            display: inline;
+            font-size: 24px;
+            color: #333333;
+            margin-left: 10px;
+        }
+
+        .input-container {
+            margin: 30px auto;
+            max-width: 500px;
+        }
+
+        .input-container input {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+            width: 200px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
+
+        .input-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .input-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .results {
+            margin-top: 30px;
+            display: none;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 80%;
+            background-color: #ffffff;
+            color: #000000;
+            border: 1px solid #000000;
+        }
+
+        table, th, td {
+            border: 1px solid #000000;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .summary {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://via.placeholder.com/150x50" alt="KNEC Logo">
+        <h1>THE KENYA NATIONAL EXAMINATIONS COUNCIL</h1>
+    </header>
+
+    <div class="input-container">
+        <input type="text" id="indexNumber" placeholder="Type index number here...">
+        <input type="text" id="name" placeholder="Type your registered name here...">
+        <button onclick="showResults()">View Results</button>
+    </div>
+
+    <div class="results" id="results">
+        <h2>2024 KCSE Examination Provisional Results</h2>
+        <p><span id="studentDetails"></span></p>
+        <p class="summary">Mean Grade: B-</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>CODE</th>
+                    <th>SUBJECT NAME</th>
+                    <th>GRADE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>121</td>
+                    <td>MATHEMATICS</td>
+                    <td>C+</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>101</td>
+                    <td>ENGLISH</td>
+                    <td>B+</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>233</td>
+                    <td>CHEMISTRY</td>
+                    <td>C+</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>231</td>
+                    <td>BIOLOGY</td>
+                    <td>B-</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>313</td>
+                    <td>CHRISTIAN RELIGIOUS EDUCATION</td>
+                    <td>B</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>565</td>
+                    <td>BUSINESS STUDIES</td>
+                    <td>B+</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>102</td>
+                    <td>KISWAHILI</td>
+                    <td>C-</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>311</td>
+                    <td>HISTORY AND GOVERNMENT</td>
+                    <td>C+</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function showResults() {
+            const indexNumber = document.getElementById('indexNumber').value;
+            const name = document.getElementById('name').value;
+
+            if (indexNumber === '20407037087' && name.toUpperCase() === 'RUTH ATIENO') {
+                document.getElementById('studentDetails').textContent = `${indexNumber} - ${name}`;
+                document.getElementById('results').style.display = 'block';
+            } else {
+                alert('Invalid Index Number or Name. Please try again.');
+            }
+        }
+    </script>
+</body>
+</html>
